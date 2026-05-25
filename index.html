@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Serviços Locais</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- ============ CABEÇALHO ============ -->
+    <header>
+        <h1>Site de Anúncios de Serviços Locais</h1>
+        <p>Divulgue e encontre serviços na sua região</p>
+    </header>
+
+    <!-- ============ FILTROS DE CATEGORIA ============ -->
+    <button class="btn-filtro ativo" onclick="filtrarCategoria(this, 'Todos')">Todos</button>
+    <button class="btn-filtro" onclick="filtrarCategoria(this, 'Construção')">Construção</button>
+    <button class="btn-filtro" onclick="filtrarCategoria(this, 'Beleza')">Beleza</button>
+    <button class="btn-filtro" onclick="filtrarCategoria(this, 'Educação')">Educação</button>
+    <button class="btn-filtro" onclick="filtrarCategoria(this, 'Tecnologia')">Tecnologia</button>
+
+
+    <!-- ============ CAMPO DE BUSCA ============ -->
+    <section class="busca">
+        <input type="text" id="campo-busca" placeholder="Buscar anúncios...">
+    </section>
+
+    <!-- ============ LISTA DE ANÚNCIOS ============ -->
+    <main>
+        <!-- Os anúncios serão renderizados dinamicamente pelo script.js -->
+    </main>
+
+    <!-- ============ FORMULÁRIO DE CADASTRO ============ -->
+    <section class="formulario">
+        <h2>Cadastrar Novo Anúncio</h2>
+        <form id="form-anuncio">
+            <input type="text" id="nome" placeholder="Nome do serviço" required>
+            <input type="text" id="descricao" placeholder="Descrição do serviço" required>
+            <input type="text" id="whatsapp" placeholder="WhatsApp (somente números)" required>
+            
+            <select id="categoria" required>
+                <option value="">Selecione a categoria</option>
+                <option value="Construção">Construção</option>
+                <option value="Beleza">Beleza</option>
+                <option value="Educação">Educação</option>
+                <option value="Tecnologia">Tecnologia</option>
+            </select>
+
+            <input type="file" id="imagem" accept="image/*">
+
+            <button type="submit">Cadastrar Anúncio</button>
+        </form>
+
+        <button id="limpar-tudo">Apagar Todos os Anúncios</button>
+    </section>
+
+    <!-- ============ SCRIPT PRINCIPAL ============ -->
+    <script src="script.js"></script>
+</body>
+</html>

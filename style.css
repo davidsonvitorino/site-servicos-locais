@@ -1,0 +1,246 @@
+
+/* ============ ESTILOS GERAIS ============ */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background: linear-gradient( to rigth, #f4f4f4, #e8f0ff);
+}
+
+/* ============ HEADER ============ */
+header {
+    background: linear-gradient(135deg, #2c7be5, #1a5fd0);
+    color: white;
+    text-align: center;
+    padding: 30px 20px;
+}
+
+/* ============ FILTROS DE CATEGORIA ============ */
+.filtros {
+    text-align: center;
+    margin: 20px;
+}
+
+.btn-filtro {
+    margin: 5px;
+    padding: 8px 12px;
+    border: none;
+    border-radius: 20px;
+    background: #2c7be5;
+    color: white;
+    cursor: pointer;
+}
+
+.btn-filtro:hover {
+    background: #1a5fd0;
+}
+
+.btn-filtro.ativo {
+    background: #222; /* DESTAQUE PARA BOTÃO ATIVO */
+}
+
+.filtros button {
+    margin: 5px;
+    padding: 8px 12px;
+    border: none;
+    border-radius: 20px;
+    background: #2c7be5;
+    color: white;
+    cursor: pointer;
+}
+
+.filtros button:hover {
+    background: #1a5fd0;
+}
+
+/* ============ GRID PRINCIPAL ============ */
+main {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    padding: 20px;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+/* ============ CAMPO DE BUSCA ============ */
+.busca {
+    margin: 20px;
+    text-align: center;
+}
+
+.busca input {
+    width: 80%;
+    padding: 12px;
+    border-radius: 5px;
+    border: solid #ccc;
+    font-size: 16px;
+}
+
+/* ============ CARTÃO DE ANÚNCIOS ============ */
+
+.anuncio {
+    background: white;
+    padding: 15px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.anuncio:hover {
+    transform: translateY(-4PX);
+    transition: 0.2s;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+}
+
+.anuncio h2 {
+    margin: 0;
+    color: #2c7be5;
+}
+
+/* ÁREA DE AÇÕES (BOTÕES) */
+.acoes {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+
+/* IMAGEM DO ANÚNCIO */
+.imagem-anuncio {
+    width: 100%;
+    height: 180%;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+/* CATEGORIA DESTACADA */
+.categoria {
+    display: inline-block;
+    background: #eef3ff;
+    color: #2c7be5;
+    padding: 4px 8px;
+    border-radius: 6px;
+    font-size: 12px;
+    margin-top: 5px;
+}
+
+.cta {
+    background: white;
+    margin: 20px;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+}
+
+/* ============ BOTÃO WHATSAPP ============ */
+.whatsapp {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 10px 10px;
+    background-color: #25d366;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+.whatsapp:hover {
+    background-color: #1ebe5d;
+}
+
+/* ============ BOTÃO EXCLUIR ============ */
+.excluir {
+    margin: 10px;
+    padding: 10px 10px;
+    background: transparent;
+    color: #e74c3c;
+    border: 1px solid #e74c3c;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.excluir:hover {
+    background: #e74c3c;
+    color: white;
+}
+
+/* ============ FORMULÁRIO ============ */
+.formulario {
+    background: white;
+    margin: 20px;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+.formulario h2 {
+    text-align: center;
+}
+
+.formulario input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+.formulario select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+button {
+    transition: all 0.2s ease;
+}
+
+.formulario button {
+    width: 100%;
+    padding: 12px;
+    margin: 10px;
+    background-color: #2c7be5;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.formulario button:hover {
+    background-color: #1a5fd0;
+}
+
+/* BOTÃO LIMPAR TUDO */
+#limpar-tudo {
+    width: 100%;
+    padding: 10px;
+    margin: 10px;
+    background: #555;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#limpar-tudo:hover {
+    background: #857e7e;
+}
+
+/* ============ RESPONSIVIDADE ============ */
+@media (max-width: 600px) {
+    main {
+        grid-template-columns: 1fr; /* celular: uma coluna */
+    }
+}
+
+@media (min-width: 900px) {
+    main {
+        grid-template-columns: repeat(3, 1fr); /* desktop: 3 colunas */
+    }
+}
