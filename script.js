@@ -26,8 +26,18 @@ function carregarAnuncios() {
     if (dados) {
         const listaSalva = JSON.parse(dados);
 
+        // Garante que todos os anúncios tenham um id válido
+        listaSalva.forEach(anuncio => {
+            if (!anuncio.id) {
+                anuncio.id = Date.now() + Math.floor(Math.random() * 10000);
+            }
+        });
+
         listaAnuncios.length = 0;
         listaAnuncios.push(...listaSalva);
+
+        // Salva novamente para garantir que todos tenham id
+        salvarAnuncios();
 
         renderizarAnuncios(listaAnuncios);
     }
@@ -170,14 +180,19 @@ main.addEventListener("click", (event) => {
     const botaoExcluir = event.target.closest(".excluir");
     if (!botaoExcluir) return;
 
+    console.log("HTML do botão clicado:", botaoExcluir.outerHTML);
+
     const confirmar = confirm("Tem certeza que deseja excluir este anúncio?");
     if (!confirmar) return;
 
     const id = Number(botaoExcluir.getAttribute("data-id"));
+    console.log("Botão excluir clicado. ID do anúncio:", id);
+    console.log("Lista de anúncios antes:", JSON.stringify(listaAnuncios));
     const novaLista = listaAnuncios.filter((anuncio) => anuncio.id !== id);
 
     listaAnuncios.length = 0;
     listaAnuncios.push(...novaLista);
+    console.log("Lista de anúncios depois:", JSON.stringify(listaAnuncios));
 
     salvarAnuncios();
     renderizarAnuncios(listaAnuncios);
